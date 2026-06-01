@@ -36,4 +36,4 @@ while True:
         data = json.dumps({"detected": False})
         print("Não detectado") 
 
-    sock.sendto(data.encode(), ("192.168.1.7", 5005))
+    sock.sendto(data.encode(), ("192.168.1.7", 5005)) #IP do celular
