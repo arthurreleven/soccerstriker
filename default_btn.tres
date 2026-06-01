@@ -1,0 +1,49 @@
+[gd_resource type="Theme" format=3 uid="uid://f6o5g8dok4yd"]
+
+[ext_resource type="FontFile" uid="uid://c0tfn4e2qi0ot" path="res://fonts/Retroica.ttf" id="1_ngb7v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvvkg"]
+bg_color = Color(0.8570065, 0.89420825, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9063318, 0.37342674, 0.09985284, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6b64"]
+bg_color = Color(0.8570065, 0.89420825, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8422919, 0.51130587, 0.09899751, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7cmj"]
+bg_color = Color(0.8422919, 0.51130587, 0.09899751, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6531802, 0.32215893, 3.85046e-07, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f38n3"]
+bg_color = Color(0.8570065, 0.89420825, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9063318, 0.37342674, 0.09985284, 1)
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_ngb7v")
+Button/styles/focus = SubResource("StyleBoxFlat_xvvkg")
+Button/styles/hover = SubResource("StyleBoxFlat_g6b64")
+Button/styles/normal = SubResource("StyleBoxFlat_t7cmj")
+Button/styles/pressed = SubResource("StyleBoxFlat_f38n3")

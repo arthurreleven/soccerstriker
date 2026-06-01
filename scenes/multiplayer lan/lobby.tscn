@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://dmv5hg3op3jcj"]
+
+[ext_resource type="Script" uid="uid://bgh5nsamn1x5c" path="res://scripts/multiplayer lan/lobby.gd" id="1_vsy7n"]
+[ext_resource type="Texture2D" uid="uid://cyrx1saio5fu5" path="res://background/fundo.png" id="2_apkv3"]
+[ext_resource type="FontFile" uid="uid://c0tfn4e2qi0ot" path="res://fonts/Retroica.ttf" id="3_omrgh"]
+[ext_resource type="Theme" uid="uid://f6o5g8dok4yd" path="res://default_btn.tres" id="5_07nfq"]
+[ext_resource type="Texture2D" uid="uid://cm3pq71r5420t" path="res://sprites/icon.svg" id="5_pc087"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uasmb"]
+bg_color = Color(0.09985284, 0.41414726, 0.8328435, 0.51900005)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4mw2"]
+bg_color = Color(0.8422919, 0.51130587, 0.09899751, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6531802, 0.32215893, 3.85046e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtlon"]
+bg_color = Color(0.8422919, 0.51130587, 0.09899751, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6531802, 0.32215893, 3.85046e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[node name="MapaSelecao" type="Control" unique_id=1334323699]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vsy7n")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1549754365]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 961.0
+offset_bottom = 540.0
+texture = ExtResource("2_apkv3")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=183331806]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 63.0
+offset_right = 723.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("3_omrgh")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_uasmb")
+text = "Lobby"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jogar" type="Button" parent="." unique_id=1538128055]
+texture_filter = 1
+layout_mode = 0
+offset_left = 459.0
+offset_top = 475.0
+offset_right = 552.0
+offset_bottom = 493.0
+theme = ExtResource("5_07nfq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4mw2")
+text = "Jogar"
+
+[node name="Player1" type="TextureRect" parent="." unique_id=1405244062]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 215.0
+offset_right = 331.0
+offset_bottom = 343.0
+texture = ExtResource("5_pc087")
+
+[node name="Name" type="Label" parent="Player1" unique_id=1624786023]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 11.0
+offset_right = 205.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Player1"
+
+[node name="Ok" type="Label" parent="Player1" unique_id=285960369]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 48.0
+offset_right = 205.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Pronto"
+
+[node name="Ping" type="Label" parent="Player1" unique_id=1677013670]
+layout_mode = 0
+offset_left = 223.0
+offset_right = 281.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "32 ms"
+
+[node name="ButtonPronto" type="Button" parent="Player1" unique_id=779581067]
+texture_filter = 1
+layout_mode = 0
+offset_left = 147.0
+offset_top = 102.0
+offset_right = 240.0
+offset_bottom = 120.0
+theme = ExtResource("5_07nfq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtlon")
+text = "Pronto
+"
+
+[node name="Player2" type="TextureRect" parent="." unique_id=444513257]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 215.0
+offset_right = 657.0
+offset_bottom = 343.0
+texture = ExtResource("5_pc087")
+
+[node name="Name" type="Label" parent="Player2" unique_id=1460392351]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 11.0
+offset_right = 205.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Player2"
+
+[node name="Ok" type="Label" parent="Player2" unique_id=2124160361]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 48.0
+offset_right = 205.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Preparando"
+
+[node name="Ping" type="Label" parent="Player2" unique_id=665093531]
+layout_mode = 0
+offset_left = 223.0
+offset_right = 281.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "32 ms"
+
+[node name="ButtonPronto1" type="Button" parent="Player2" unique_id=1539992399]
+texture_filter = 1
+layout_mode = 0
+offset_left = 147.0
+offset_top = 102.0
+offset_right = 240.0
+offset_bottom = 120.0
+theme = ExtResource("5_07nfq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtlon")
+text = "Pronto
+"
+
+[connection signal="pressed" from="Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Player1/ButtonPronto" to="." method="_on_button_pronto_pressed"]
+[connection signal="pressed" from="Player2/ButtonPronto1" to="." method="_on_button_pronto_pressed"]

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-user-select:none;
+    user-select:none;
+}
+
+body{
+    background:
+    linear-gradient(to bottom,#28a9ff,#0066cc);
+
+    width:100vw;
+    height:80vh;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+
+    padding:4vw;
+
+    touch-action:none;
+    font-family:Arial;
+}
+
+.left{
+    display:flex;
+    gap:20px;
+}
+
+.right{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.btn{
+    width:12vw;
+    height:12vw;
+
+    max-width:120px;
+    max-height:120px;
+
+    min-width:70px;
+    min-height:70px;
+
+    border:none;
+    border-radius:50%;
+
+    font-size:6vw;
+    font-weight:bold;
+    color:white;
+
+    background:
+    linear-gradient(to bottom,#32d74b,#149c2e);
+
+    border:4px solid #111;
+
+    box-shadow:
+    0 6px 0 #0a5d18,
+    0 10px 15px rgba(0,0,0,.4);
+
+    transition:.05s;
+
+    touch-action:manipulation;
+}
+
+.btn:active{
+    transform:translateY(6px);
+
+    box-shadow:
+    0 2px 0 #0a5d18,
+    0 4px 10px rgba(0,0,0,.4);
+}
+
+.kick{
+    background:
+    linear-gradient(to bottom,#ffb300,#ff6a00);
+
+    box-shadow:
+    0 8px 0 #b54800,
+    0 12px 20px rgba(0,0,0,.4);
+}
+
+.jump{
+    background:
+    linear-gradient(to bottom,#29b6ff,#0066ff);
+
+    box-shadow:
+    0 8px 0 #003bb5,
+    0 12px 20px rgba(0,0,0,.4);
+}
+</style>
+</head>
+
+<body>
+
+<div class="left">
+    <button class="btn"
+    ontouchstart="press('left')"
+    ontouchend="release('left')">
+    ◀
+    </button>
+
+    <button class="btn"
+    ontouchstart="press('right')"
+    ontouchend="release('right')">
+    ▶
+    </button>
+</div>
+
+<div class="right">
+    <button class="btn jump"
+    ontouchstart="press('jump')"
+    ontouchend="release('jump')">
+    ↑
+    </button>
+
+    <button class="btn kick"
+    ontouchstart="press('kick')"
+    ontouchend="release('kick')">
+    ⚽
+    </button>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const host = params.get('ip') || window.location.hostname;
+const socket = new WebSocket(`ws://${host}:8080`);
+
+let state = {
+    left:false,
+    right:false,
+    jump:false,
+    kick:false
+};
+
+function send(){
+    if(socket.readyState === WebSocket.OPEN){
+        socket.send(JSON.stringify(state));
+    }
+}
+
+function press(action){
+    state[action] = true;
+    send();
+}
+
+function release(action){
+    state[action] = false;
+    send();
+}
+
+document.body.addEventListener(
+    'touchmove',
+    function(e){
+        e.preventDefault();
+    },
+    { passive:false }
+);
+</script>
+
+</body>
+</html>

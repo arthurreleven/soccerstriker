@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bjrm32bjx16fr"]
+
+[ext_resource type="Script" uid="uid://dsq15uygkifw3" path="res://scripts/multiplayer lan/menu_multiplayer.gd" id="1_3l4eo"]
+
+[node name="MenuMultiplayer" type="Control" unique_id=2089585218]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3l4eo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1632545822]
+layout_mode = 0
+offset_right = 831.0
+offset_bottom = 416.0
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1888408316]
+layout_mode = 2
+text = "Multiplayer
+"
+
+[node name="IPInput" type="LineEdit" parent="VBoxContainer" unique_id=2065625298]
+layout_mode = 2
+placeholder_text = "IP do host (ex: 192.168.1.10)"
+
+[node name="ButtonHost" type="Button" parent="VBoxContainer" unique_id=760250647]
+layout_mode = 2
+text = "Criar Sala
+"
+
+[node name="ButtonJoin" type="Button" parent="VBoxContainer" unique_id=315390808]
+layout_mode = 2
+text = "Entrar
+"
+
+[node name="ErrorLabel" type="Label" parent="VBoxContainer" unique_id=605477931]
+layout_mode = 2
+
+[node name="ButtonVoltar" type="Button" parent="VBoxContainer" unique_id=1525495183]
+layout_mode = 2
+text = "Voltar"
+
+[connection signal="pressed" from="VBoxContainer/ButtonHost" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonJoin" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonVoltar" to="." method="_on_voltar_pressed"]

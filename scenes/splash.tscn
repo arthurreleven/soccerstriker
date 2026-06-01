@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://dpiwm00ba4nts"]
+
+[ext_resource type="Texture2D" uid="uid://bxlsctexlsvr6" path="res://sprites/195924.png" id="1_4rrho"]
+[ext_resource type="Script" uid="uid://b85yxlyrw7jnl" path="res://scripts/loading.gd" id="1_5svwm"]
+[ext_resource type="Texture2D" uid="uid://c8py6btu7bspb" path="res://background/soccer strike.png" id="1_10vqf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5svwm"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_31efs"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_10vqf"]
+offsets = PackedFloat32Array(0.1776044, 0.85795873, 0.99268013, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.89573556, 0.7735731, 0, 1, 0.9782772, 0.88116366, 6.9914483e-07, 1, 0.98665327, 0.8920816, 7.70092e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4rrho"]
+gradient = SubResource("Gradient_10vqf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c8158"]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 320.0
+angle_min = 295.5
+angle_max = 295.5
+direction = Vector3(0, -1, 0)
+spread = 170.0
+initial_velocity_max = 200.0
+angular_velocity_min = 0.9999839
+angular_velocity_max = 0.9999839
+orbit_velocity_min = 1.0000001
+orbit_velocity_max = 1.0000001
+gravity = Vector3(0, 0, 0)
+color = Color(0.97561836, 1.3853716, 1.3848547e-06, 1)
+color_ramp = SubResource("GradientTexture1D_4rrho")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10vqf"]
+border_width_left = 4
+border_width_top = 3
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(0, 0.6180314, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Environment" id="Environment_r4d6w"]
+glow_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rrho"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 4
+border_width_top = 3
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(0.24115771, 0.35510397, 0.6930514, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5svwm"]
+bg_color = Color(0.23921569, 0.35686275, 0.69411767, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Splash" type="Control" unique_id=883311626]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5svwm")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=703387028]
+modulate = Color(0.11764706, 0.4509804, 0.9098039, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_5svwm")
+stretch_mode = 6
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=504923576]
+material = SubResource("CanvasItemMaterial_31efs")
+position = Vector2(487, 258)
+amount = 30
+texture = ExtResource("1_4rrho")
+lifetime = 0.5
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_c8158")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2084831251]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.5
+offset_top = -161.5
+offset_right = 245.5
+offset_bottom = 161.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_10vqf")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1435783554]
+visible = false
+clip_contents = true
+layout_mode = 0
+offset_left = 388.0
+offset_top = 493.0
+offset_right = 566.0
+offset_bottom = 510.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_10vqf")
+
+[node name="TextureRect3" type="TextureRect" parent="Panel" unique_id=1430060330]
+visible = false
+modulate = Color(7.70092e-07, 0.538222, 0.57035434, 1)
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -41.0
+offset_right = 86.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_5svwm")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="." unique_id=245748095]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = 458.0
+offset_right = 37.5
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Loading..."
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1136896732]
+environment = SubResource("Environment_r4d6w")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1187658128]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 493.0
+offset_right = 566.0
+offset_bottom = 510.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4rrho")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5svwm")
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="." unique_id=1206167162]
+visible = false
+layout_mode = 0
+offset_left = 388.0
+offset_top = 493.0
+offset_right = 566.0
+offset_bottom = 510.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4rrho")
+show_percentage = false

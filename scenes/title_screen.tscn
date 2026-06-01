@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://cxp6boc5dj3vd"]
+
+[ext_resource type="Script" uid="uid://dttcrw5gc3bgg" path="res://scripts/title_screen.gd" id="1_dc4i4"]
+[ext_resource type="Texture2D" uid="uid://bge17u6wv7s2d" path="res://background/principal.jpeg" id="2_e54dn"]
+[ext_resource type="Texture2D" uid="uid://c8py6btu7bspb" path="res://background/soccer strike.png" id="3_3yumr"]
+[ext_resource type="Theme" uid="uid://f6o5g8dok4yd" path="res://default_btn.tres" id="4_cs5ya"]
+[ext_resource type="Texture2D" uid="uid://bgvqk1qtivjbn" path="res://background/Play.png" id="5_mykxm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvvkg"]
+
+[sub_resource type="Animation" id="Animation_xvvkg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(194, 143)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mochi:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g6b64"]
+resource_name = "reveal"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666666, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.48666665, 0.7),
+"transitions": PackedFloat32Array(0.4204483, 0.39229208),
+"update": 0,
+"values": [Vector2(-1500, 0), Vector2(194, 143)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mochi:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.067666665, 0.72, 1.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t7cmj"]
+_data = {
+&"RESET": SubResource("Animation_xvvkg"),
+&"reveal": SubResource("Animation_g6b64")
+}
+
+[node name="TitleScreen" type="Control" unique_id=1576760138]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dc4i4")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1280398802]
+texture_filter = 1
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("2_e54dn")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=286662286]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 194.0
+offset_top = 143.0
+offset_right = 194.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1218721587]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1241930501]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="GameLogo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1395463483]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+texture = ExtResource("3_3yumr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=715750285]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("4_cs5ya")
+text = "Start"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=980396434]
+texture_filter = 1
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xvvkg")
+
+[node name="Credits" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1380835595]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("4_cs5ya")
+text = "Credits"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=669102560]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xvvkg")
+
+[node name="Quit Game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=122328618]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("4_cs5ya")
+text = "Quit Game"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1759909200]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xvvkg")
+
+[node name="Local" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1198974504]
+visible = false
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("4_cs5ya")
+text = "Local"
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2146607171]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xvvkg")
+
+[node name="Multiplayer" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=658227959]
+visible = false
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("4_cs5ya")
+text = "Multiplayer"
+
+[node name="mochi" type="TextureRect" parent="." unique_id=1346005944]
+texture_filter = 1
+layout_mode = 0
+offset_left = -180.0
+offset_top = 55.0
+offset_right = 654.2023
+offset_bottom = 555.0
+texture = ExtResource("5_mykxm")
+expand_mode = 3
+
+[node name="Anim" type="AnimationPlayer" parent="." unique_id=1397657677]
+libraries/ = SubResource("AnimationLibrary_t7cmj")
+autoplay = &"reveal"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Local" to="." method="_on_local_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
