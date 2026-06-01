@@ -2,6 +2,25 @@ extends Control
 
 @onready var ip_input    = $VBoxContainer/IPInput
 @onready var error_label = $VBoxContainer/ErrorLabel
+@onready var ip_label    = $IPLabel
+
+func _ready():
+	var ip = IP.get_local_addresses()
+	var ip_encontrado = ""
+	
+	for addr in ip:
+		if ":" in addr:
+			continue
+		if addr.begins_with("192.168."):
+			ip_encontrado = addr
+			break
+		elif addr.begins_with("10."):
+			ip_encontrado = addr
+	
+	if ip_encontrado == "":
+		ip_label.text = "IP não encontrado"
+	else:
+		ip_label.text = "Seu IP: " + ip_encontrado
 
 func _on_host_pressed():
 	Network.create_server()

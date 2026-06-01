@@ -205,14 +205,9 @@ Visualização no Celular
 
 ## Executar o Controle Web
 
-1. Inicie o servidor WebSocket.
-2. Descubra o IP local do computador.
-3. Nos celulares conectados à mesma rede, acesse:
-
-```text
-http://IP_DO_SERVIDOR:PORTA
-```
-
+1. Inicie o modo Multiplayer.
+2. Mantenha os celulares conectados à mesma rede
+2. Escaneie o QrCode ou acesse o link que será fornecido no lobby
 4. Utilize os botões exibidos na página para controlar o jogador.
 
 ## Executar o Multiplayer Online
@@ -277,4 +272,6 @@ Este projeto foi desenvolvido para aprofundar conhecimentos em:
 
 # 📄 Licença
 
-Este projeto foi desenvolvido para fins acadêmicos e educacionais.
+Este projeto foi desenvolvido para fins acadêmicos e educacionais e está licenciado sob a MIT License.
+
+Link Vídeo Pitch: https://youtu.be/t8h1o_gFLfA
