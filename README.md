@@ -206,8 +206,8 @@ Visualização no Celular
 ## Executar o Controle Web
 
 1. Inicie o modo Multiplayer.
-2. Mantenha os celulares conectados à mesma rede
-2. Escaneie o QrCode ou acesse o link que será fornecido no lobby
+2. Mantenha os celulares conectados à mesma rede.
+2. Escaneie o QrCode ou acesse o link que será fornecido no lobby.
 4. Utilize os botões exibidos na página para controlar o jogador.
 
 ## Executar o Multiplayer Online
